@@ -8,13 +8,13 @@ class StudentsController < ApplicationController
     if @student.save
       redirect_to @student
     else
-      render '_form'
+      render :layout=>'_form'
     end
   end
 
   def edit
     @student = Student.find(params[:id])
-    render '_form'
+    render :layout=>'_form'
   end
 
   def show

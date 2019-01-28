@@ -8,12 +8,13 @@ class StudentsController < ApplicationController
     if @student.save
       redirect_to @student
     else
-      render 'new'
+      render '_form'
     end
   end
 
   def edit
     @student = Student.find(params[:id])
+    render '_form'
   end
 
   def show
